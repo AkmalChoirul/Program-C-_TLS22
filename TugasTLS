@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+#include <cstring>
+using namespace std;
+
+unsigned int factorial(int a) {
+int r=1;
+for (int i=a;i>0;i--) r*=i;
+return r;
+}
+
+int main () {
+    double a,b,r,memory=0;
+    char op, choice[10];
+
+    cout << "Petunjuk penggunaan = \n#simbol + untuk menambah bilangan\n#simbol - untuk mengurang bilangan\n#simbol * untuk kali dua bilangan\n#simbol / untuk membagi dua bilangan\n#simbol ^ untuk pangkat.\n\n";
+    start: 
+    cout << "Masukkan bilangan yang anda inginkan = ";
+    cin  >> a; 
+    reused: 
+    cin>>op; 
+    if (op=='!') r=factorial(a); 
+    else {
+    cin>>b;
+    if (op=='+') r=a+b;
+    if (op=='-') r=a-b;
+    if (op=='*') r=a*b;
+    if (op=='/') r=a/b;
+    if (op=='^') r=pow(a,b);
+    }
+    cout<<"="<<r<<endl;
+    return 0;
+}
